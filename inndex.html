@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Büroları | Akıllı Döviz & Altın Platformu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #006847;
+            --primary-dark: #004d33;
+            --primary-light: #00875a;
+            --secondary: #FFD700;
+            --secondary-dark: #e6c200;
+            --white: #FFFFFF;
+            --dark: #1a1a1a;
+            --darker: #121212;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.5rem 2rem;
+            background: rgba(0, 104, 71, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+		
+.logo-img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: rotate(15deg);
+        }
+
+        .logo h1 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--white) 60%, var(--secondary) 40%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        } 
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 104, 71, 0.9), rgba(0, 77, 51, 0.9)), url('https://images.unsplash.com/photo-1642784634789-b5fbd87a9d8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--white), transparent);
+            z-index: 1;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            color: var(--white);
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content h2 span {
+            background: linear-gradient(to right, var(--secondary), #ffea00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .app-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .app-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .app-btn i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Floating coins animation */
+        .floating-coins {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .coin {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle at 30% 30%, var(--secondary) 0%, var(--secondary-dark) 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            opacity: 0.7;
+            animation: float 15s infinite linear;
+        }
+
+        .coin:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 0s;
+            animation-duration: 12s;
+        }
+
+        .coin:nth-child(2) {
+            top: 20%;
+            left: 80%;
+            width: 50px;
+            height: 50px;
+            animation-delay: 2s;
+            animation-duration: 18s;
+        }
+
+        .coin:nth-child(3) {
+            top: 70%;
+            left: 15%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 4s;
+            animation-duration: 10s;
+        }
+
+        .coin:nth-child(4) {
+            top: 60%;
+            left: 70%;
+            width: 40px;
+            height: 40px;
+            animation-delay: 1s;
+            animation-duration: 15s;
+        }
+
+        /* Rates Section */
+        .rates {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 1rem auto 0;
+            color: #555;
+        }
+
+        .rates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .rate-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .rate-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .rate-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .rate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+
+        .rate-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .rate-card-header i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-right: 1rem;
+        }
+
+        .rate-card-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .rate-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .rate-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rate-change.up {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+        }
+
+        .rate-change.down {
+            background-color: rgba(220, 53, 69, 0.1);
+            color: var(--danger);
+        }
+
+        .rate-change.neutral {
+            background-color: rgba(23, 162, 184, 0.1);
+            color: var(--info);
+        }
+
+        .rate-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .rate-details p {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .rate-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .rate-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .rate-features i {
+            color: var(--success);
+        }
+
+        .rate-card-footer {
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--medium-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .whitepaper-btn {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .whitepaper-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .buy-button {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 104, 71, 0.2);
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 104, 71, 0.3);
+        }
+
+        .buy-button i {
+            font-size: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem;
+            background-color: var(--light-gray);
+        }
+
+        .faq-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .accordion {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background-color: var(--white);
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            background-color: var(--white);
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #f9f9f9;
+        }
+
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            border-top: 1px solid transparent;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding: 1.5rem;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, var(--white) 0%, var(--light-gray) 100%);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 3px;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .contact-item-content h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item-content p {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-col p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .footer-bg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-content h2 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-menu-btn i {
+                transition: transform 0.3s ease;
+            }
+
+            .mobile-menu-btn.active i {
+                transform: rotate(90deg);
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .rates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .rate-card {
+                padding: 1.5rem;
+            }
+
+            .app-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <img src="file:///C:/Users/mreda/Downloads/iPhone%2014%20Pro%20Max%20-%2012%20(1)%204%20(2).svg" alt="Döviz Büroları Logo" class="logo-img">
+                <h1>Döviz Büroları</h1>
+            </a>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="#rates">Stabil Kripto Paralar</a></li>
+                    <li><a href="#faq">SSS</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-coins">
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content animate__animated animate__fadeIn">
+                <h2>Döviz ve Altın İşlemlerinde <span>Yeni Nesil Platform</span></h2>
+                <p>Döviz Büroları'nda makas farkı derdi yok! Anlık piyasa verileriyle döviz ve altın alım-satım işlemlerinizi en karlı şekilde yapın, aradaki farkı cebinize katın.</p>
+                <div class="hero-buttons">
+                    <a href="#rates" class="cta-button">Anlık Kurları Görüntüle <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.MREDAS.DovizBurolari&gl=TR" class="app-btn" target="_blank">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                    <a href="" class="app-btn" target="_blank">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rates Section -->
+    <section class="rates" id="rates">
+        <div class="rates-container">
+            <div class="section-title">
+                <h2>Stabil Kripto Paralar</h2>
+                <p>7/24 Açık Piyasa, Anında İşlem – Makas Yok, Kazanç Tam!</p>
+            </div>
+            
+            <div class="rates-grid">
+                <div class="rate-card">
+                    <div class="rate-card-header">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>MREDAS USD/TRY</h3>
+                    </div>
+                    <div class="rate-value"></div>
+                    <span class="rate-change up"><i class="fas fa-arrow-up"></i> %</span>
+                    <div class="rate-details">
+                        <p>MREDAS USD, ABD dolarına tam olarak sabitlenmiş bir stabil kripto paradır. Her bir MREDAS USD tokenı, 1:1 oranında ABD doları ile desteklenmektedir ve tam rezerv modeliyle çalışmaktadır. Düşük volatilitesi sayesinde güvenli bir değer saklama aracı olarak kullanılabilir.</p>
+                        <ul class="rate-features">
+                            <li><i class="fas fa-check-circle"></i> %100 ABD doları karşılığı</li>
+                            <li><i class="fas fa-check-circle"></i> Anında transfer imkanı (7/24)</li>
+                            <li><i class="fas fa-check-circle"></i> Şeffaf rezerv yapısı</li>
+                            <li><i class="fas fa-check-circle"></i> Global likidite havuzu</li>
+							<li><i class="fas fa-check-circle"></i> Sıfır makas farkı ile anlık işlem imkanı</li>
+                        </ul>
+                    </div>
+                    <div class="rate-card-footer">
+                        <button class="whitepaper-btn" id="whitepaperBtn1">
+                            <i class="fas fa-file-alt"></i> Whitepaper
+                        </button>
+                        <button class="buy-button" id="buyBtn1">
+                            <i class="fas fa-shopping-cart"></i> Satın Al
+                        </button>
+                    </div>
+                </div>
+                <div class="rate-card">
+                    <div class="rate-card-header">
+                        <i class="fas fa-gem"></i>
+                        <h3>MREDAS Gold/TRY</h3>
+                    </div>
+                    <div class="rate-value"></div>
+                    <span class="rate-change up"><i class="fas fa-arrow-up"></i> %</span>
+                    <div class="rate-details">
+                        <p>MREDAS Gold, fiziksel altına tam olarak sabitlenmiş bir stabil kripto paradır. Her bir MREDAS Gold tokenı, 1 Ons altın ile desteklenmektedir ve Londra Altın Piyasası standartlarına uygundur. Güvenli depolama tesislerinde saklanan altınlar düzenli olarak denetlenir.</p>
+                        <ul class="rate-features">
+                            <li><i class="fas fa-check-circle"></i> %100 Ons altın karşılığı</li>
+                            <li><i class="fas fa-check-circle"></i> Anında transfer imkanı (7/24)</li>
+                            <li><i class="fas fa-check-circle"></i> Şeffaf rezerv yapısı</li>
+                            <li><i class="fas fa-check-circle"></i> Global likidite havuzu</li>
+							<li><i class="fas fa-check-circle"></i> Sıfır makas farkı ile anlık işlem imkanı</li>
+                        </ul>
+                    </div>
+                    <div class="rate-card-footer">
+                        <button class="whitepaper-btn" id="whitepaperBtn2">
+                            <i class="fas fa-file-alt"></i> Whitepaper
+                        </button>
+                        <button class="buy-button" id="buyBtn2">
+                            <i class="fas fa-shopping-cart"></i> Satın Al
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <div class="section-title">
+                <h2>Sık Sorulan Sorular</h2>
+                <p>Döviz Büroları hakkında merak ettikleriniz</p>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Uygulamanın amacı nedir?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Kullanıcıların makas farkı ödemeden işlem yapmasını sağlayarak maliyetlerini düşürmek ve kârlarını artırmaktır. Bu sayede, daha adil ve verimli bir ticaret deneyimi sunulur.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Stabil kripto para nedir?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Değeri belirli bir varlığa sabitlenmiş dijital bir varlıktır; örneğin, 1 ABD dolarına sabitlenmiş stabil kripto paralar her zaman 1 USD değerinde olacak şekilde tasarlanırken, ons altına sabitlenmiş stabil kripto paralar belirli bir oranda fiziksel altın karşılığında teminatlandırılarak değerini korur.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>İşlemlerde komisyon alınıyor mu?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Hayır, işlemlerden doğrudan komisyon alınmaz; bunun yerine gelir modeli, kullanıcıların işlem yapma hakkı karşılığında ödedikleri işlem hakkı ücretleri ile sağlanır. Böylece, kullanıcılar düşük maliyetle işlem yapabilirken sistemin sürdürülebilirliği de korunur.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>İşletmelerin çalışma saatleri nedir?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Tamamen kendi politikalarına ve yönetimlerine bağlıdır. Bu nedenle, çalışma saatleri ile ilgili herhangi bir sorumluluk taşımamaktayız. Ayrıca, oluşabilecek herhangi bir problemden dolayı sorumluluk kabul edilmemektedir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Bize Ulaşın</h3>
+                <p>Döviz Büroları müşteri temsilcilerimiz, döviz ve altın işlemleri hakkındaki tüm sorularınızı yanıtlamak için hazır bekliyor.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item-content">
+                            <h4>Adres</h4>
+                            <p>Güven, Adnan Kahveci Blv. No: 35, 34160 Güngören/İstanbul</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-item-content">
+                            <h4>Telefon</h4>
+                            <p>+90 212 111 11 11</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-content">
+                            <h4>E-posta</h4>
+                            <p>dovizburolari@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-item-content">
+                            <h4>Çalışma Saatleri</h4>
+                            <p>Pazartesi - Cuma: 09.00 - 18.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Döviz Büroları</h3>
+                <p>Döviz ve altın işlemlerinde güvenilir adresiniz.</p>
+                <div class="social-links">
+                    <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/dovizburolari/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/DovizBurolar" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@dovizburolari" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Yasal</h3>
+                <ul>
+                    <li><a href="#">Kullanım Koşulları</a></li>
+                    <li><a href="#">Gizlilik Politikası</a></li>
+                    <li><a href="#">KVKK Aydınlatma Metni</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Döviz Büroları. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.rate-card, .accordion-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+
+        // Run animation check on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // FAQ Accordion
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            
+            header.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.accordion-item.active');
+                
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.remove('active');
+                }
+                
+                item.classList.toggle('active');
+            });
+        });
+
+        // Buy button functionality - removed demo alert
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // No action for demo
+            });
+        });
+
+        // Whitepaper button functionality - removed demo alert
+        document.querySelectorAll('.whitepaper-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                // No action for demo
+            });
+        });
+
+        // Removed live rate changes simulation
+    </script>
+</body>
+</html>
