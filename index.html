@@ -77,10 +77,19 @@
         }
 		
 .logo-img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
+  width: 36px;
+  height: 36px;
+  display: flex;          /* Eklendi */
+  align-items: center;    /* Eklendi */
+  justify-content: center; /* Eklendi */
+  transition: transform 0.3s ease; /* Önceki animasyonu koruyun */
+}
+
+/* Bu yeni kuralı CSS'in en altına ekleyin */
+.logo-img svg {
+  width: 100%;
+  height: 100%;
+}
 
         .logo:hover .logo-img {
             transform: rotate(15deg);
@@ -930,10 +939,16 @@
     <!-- Header -->
     <header id="header">
         <div class="header-container">
-            <a href="#home" class="logo">
-                <img src="file:///C:/Users/mreda/Downloads/iPhone%2014%20Pro%20Max%20-%2012%20(1)%204%20(2).svg" alt="Döviz Büroları Logo" class="logo-img">
-                <h1>Döviz Büroları</h1>
-            </a>
+<a href="#home" class="logo">
+  <div class="logo-img">
+    <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M328.509..." fill="#FFD700"/>
+      <path d="M353.51..." fill="black"/>
+      <path d="M378.509..." fill="white"/>
+    </svg>
+  </div>
+  <h1>Döviz Büroları</h1>
+</a>
             <nav>
                 <ul id="nav-menu">
                     <li><a href="#home">Ana Sayfa</a></li>
