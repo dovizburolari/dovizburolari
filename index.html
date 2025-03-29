@@ -6,6 +6,7 @@
     <title>Döviz Büroları | Akıllı Döviz & Altın Platformu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #006847;
@@ -28,12 +29,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        @font-face {
-            font-family: 'Poppins';
-            src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         body {
@@ -41,22 +37,23 @@
             color: var(--dark);
             overflow-x: hidden;
             line-height: 1.6;
+            font-size: 16px;
         }
 
         /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
-            padding: 1rem 2rem;
+            padding: 1rem;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
         header.scrolled {
-            padding: 0.5rem 2rem;
+            padding: 0.5rem 1rem;
             background: rgba(0, 104, 71, 0.98);
             backdrop-filter: blur(10px);
         }
@@ -67,6 +64,7 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .logo {
@@ -75,10 +73,10 @@
             gap: 10px;
             text-decoration: none;
         }
-		
-.logo-img {
-            width: 40px;
-            height: 40px;
+
+        .logo-img {
+            width: 36px;
+            height: 36px;
             transition: transform 0.3s ease;
         }
 
@@ -88,24 +86,24 @@
 
         .logo h1 {
             font-weight: 700;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             background: linear-gradient(to right, var(--white) 60%, var(--secondary) 40%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: all 0.3s ease;
-        } 
+        }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         nav a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
@@ -119,12 +117,12 @@
             content: '';
             position: absolute;
             width: 0;
-            height: 3px;
+            height: 2px;
             bottom: 0;
             left: 0;
             background-color: var(--secondary);
             transition: width 0.3s ease;
-            border-radius: 3px;
+            border-radius: 2px;
         }
 
         nav a:hover::after {
@@ -139,6 +137,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 1001;
+            padding: 0.5rem;
         }
 
         /* Hero Section */
@@ -147,11 +146,10 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            height: 100vh;
-            min-height: 700px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
+            padding: 6rem 1rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -162,7 +160,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 100px;
+            height: 60px;
             background: linear-gradient(to top, var(--white), transparent);
             z-index: 1;
         }
@@ -170,7 +168,6 @@
         .hero-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
             width: 100%;
             position: relative;
             z-index: 2;
@@ -182,29 +179,28 @@
         }
 
         .hero-content h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .hero-content h2 span {
             background: linear-gradient(to right, var(--secondary), #ffea00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
             line-height: 1.6;
             opacity: 0.9;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
@@ -215,27 +211,28 @@
             gap: 0.5rem;
             background-color: var(--secondary);
             color: var(--primary);
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             border: 2px solid var(--secondary);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
         }
 
         .cta-button:hover {
             background-color: transparent;
             color: var(--secondary);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
 
         .app-buttons {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
         }
 
         .app-btn {
@@ -245,12 +242,13 @@
             background-color: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(5px);
             color: var(--white);
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
         }
 
         .app-btn:hover {
@@ -260,7 +258,7 @@
 
         .app-btn i {
             margin-right: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         /* Floating coins animation */
@@ -276,11 +274,11 @@
 
         .coin {
             position: absolute;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             background: radial-gradient(circle at 30% 30%, var(--secondary) 0%, var(--secondary-dark) 100%);
             border-radius: 50%;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
             opacity: 0.7;
             animation: float 15s infinite linear;
         }
@@ -288,8 +286,8 @@
         .coin:nth-child(1) {
             top: 10%;
             left: 10%;
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             animation-delay: 0s;
             animation-duration: 12s;
         }
@@ -297,8 +295,8 @@
         .coin:nth-child(2) {
             top: 20%;
             left: 80%;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             animation-delay: 2s;
             animation-duration: 18s;
         }
@@ -306,8 +304,8 @@
         .coin:nth-child(3) {
             top: 70%;
             left: 15%;
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             animation-delay: 4s;
             animation-duration: 10s;
         }
@@ -315,15 +313,15 @@
         .coin:nth-child(4) {
             top: 60%;
             left: 70%;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             animation-delay: 1s;
             animation-duration: 15s;
         }
 
         /* Rates Section */
         .rates {
-            padding: 5rem 2rem;
+            padding: 3rem 1rem;
             max-width: 1400px;
             margin: 0 auto;
             position: relative;
@@ -332,11 +330,11 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
@@ -346,9 +344,9 @@
             content: '';
             position: absolute;
             width: 50%;
-            height: 4px;
+            height: 3px;
             background: linear-gradient(to right, var(--primary), var(--secondary));
-            bottom: -10px;
+            bottom: -8px;
             left: 25%;
             border-radius: 2px;
         }
@@ -357,20 +355,21 @@
             max-width: 700px;
             margin: 1rem auto 0;
             color: #555;
+            font-size: 0.95rem;
         }
 
         .rates-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             justify-content: center;
         }
 
         .rate-card {
             background-color: var(--white);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -387,8 +386,8 @@
         }
 
         .rate-card:hover {
-            transform: translateY(-10px) !important;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px) !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .rate-card::before {
@@ -397,7 +396,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             z-index: 2;
         }
@@ -405,26 +404,25 @@
         .rate-card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .rate-card-header i {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--secondary);
-            margin-right: 1rem;
+            margin-right: 0.8rem;
         }
 
         .rate-card-header h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary);
         }
 
         .rate-value {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.8rem;
         }
 
         .rate-change {
@@ -434,8 +432,8 @@
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
         }
 
         .rate-change.up {
@@ -454,18 +452,19 @@
         }
 
         .rate-details {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .rate-details p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: #555;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .rate-features {
             list-style: none;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
         .rate-features li {
@@ -475,15 +474,17 @@
             gap: 0.5rem;
             color: var(--primary);
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .rate-features i {
             color: var(--success);
+            font-size: 0.9rem;
         }
 
         .rate-card-footer {
             margin-top: auto;
-            padding-top: 1.5rem;
+            padding-top: 1.2rem;
             border-top: 1px solid var(--medium-gray);
             display: flex;
             justify-content: space-between;
@@ -494,14 +495,15 @@
             background: transparent;
             color: var(--primary);
             border: 1px solid var(--primary);
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
         .whitepaper-btn:hover {
@@ -513,30 +515,31 @@
             background: linear-gradient(to right, var(--primary), var(--primary-light));
             color: var(--white);
             border: none;
-            padding: 0.8rem 1.8rem;
-            border-radius: 8px;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0, 104, 71, 0.2);
+            box-shadow: 0 3px 10px rgba(0, 104, 71, 0.2);
+            font-size: 0.9rem;
         }
 
         .buy-button:hover {
             background: linear-gradient(to right, var(--primary-dark), var(--primary));
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 104, 71, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 104, 71, 0.3);
         }
 
         .buy-button i {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         /* FAQ Section */
         .faq {
-            padding: 5rem 2rem;
+            padding: 3rem 1rem;
             background-color: var(--light-gray);
         }
 
@@ -547,19 +550,19 @@
 
         .accordion {
             max-width: 800px;
-            margin: 2rem auto 0;
+            margin: 1.5rem auto 0;
         }
 
         .accordion-item {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             background-color: var(--white);
         }
 
         .accordion-header {
-            padding: 1.5rem;
+            padding: 1.2rem;
             background-color: var(--white);
             color: var(--primary);
             font-weight: 600;
@@ -568,6 +571,7 @@
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .accordion-header:hover {
@@ -576,6 +580,7 @@
 
         .accordion-header i {
             transition: transform 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .accordion-item.active .accordion-header i {
@@ -583,7 +588,7 @@
         }
 
         .accordion-content {
-            padding: 0 1.5rem;
+            padding: 0 1.2rem;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
@@ -592,13 +597,19 @@
 
         .accordion-item.active .accordion-content {
             max-height: 500px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-top: 1px solid var(--medium-gray);
+        }
+
+        .accordion-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 2rem;
+            padding: 3rem 1rem;
             background: linear-gradient(to bottom, var(--white) 0%, var(--light-gray) 100%);
         }
 
@@ -607,15 +618,15 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .contact-info {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -623,19 +634,19 @@
         .contact-info::before {
             content: '';
             position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
+            top: -40px;
+            right: -40px;
+            width: 150px;
+            height: 150px;
             background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
 
         .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: 0.8rem;
         }
 
         .contact-info h3::after {
@@ -643,43 +654,51 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
+            width: 40px;
+            height: 2px;
             background-color: var(--secondary);
-            border-radius: 3px;
+            border-radius: 2px;
+        }
+
+        .contact-info p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
         }
 
         .contact-details {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
+            margin-bottom: 1.2rem;
+            gap: 0.8rem;
         }
 
         .contact-item i {
             color: var(--secondary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 3px;
             flex-shrink: 0;
         }
 
         .contact-item-content h4 {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
         }
 
         .contact-item-content p {
             opacity: 0.9;
+            font-size: 0.9rem;
         }
 
         /* Footer */
         footer {
             background-color: var(--darker);
             color: var(--white);
-            padding: 3rem 2rem 1rem;
+            padding: 2rem 1rem 1rem;
             position: relative;
         }
 
@@ -687,19 +706,20 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
         }
 
         .footer-col {
             position: relative;
             z-index: 1;
+            margin-bottom: 1rem;
         }
 
         .footer-col h3 {
             color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
             position: relative;
             padding-bottom: 0.5rem;
         }
@@ -709,14 +729,15 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 35px;
             height: 2px;
             background-color: var(--secondary);
         }
 
         .footer-col p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             opacity: 0.8;
+            font-size: 0.9rem;
         }
 
         .footer-col ul {
@@ -724,7 +745,7 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .footer-col ul li a {
@@ -732,29 +753,32 @@
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
+            font-size: 0.9rem;
         }
 
         .footer-col ul li a:hover {
             color: var(--secondary);
-            transform: translateX(5px);
+            transform: translateX(3px);
         }
 
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-top: 1rem;
+            flex-wrap: wrap;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--white);
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .social-links a:hover {
@@ -765,42 +789,33 @@
 
         .copyright {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        .footer-bg {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 300px;
-            opacity: 0.05;
-            z-index: 0;
+            font-size: 0.8rem;
         }
 
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 45px;
+            height: 45px;
             background-color: var(--primary);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 999;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .back-to-top.visible {
@@ -819,39 +834,90 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-15px);
             }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .floating {
-            animation: float 3s ease-in-out infinite;
         }
 
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .hero-content h2 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (max-width: 992px) {
+        @media (min-width: 576px) {
             .hero-content h2 {
                 font-size: 2.5rem;
             }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .rates-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+            
+            .contact-info {
+                padding: 2.5rem;
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
+            header {
+                padding: 1rem 2rem;
+            }
+            
+            header.scrolled {
+                padding: 0.5rem 2rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav a {
+                font-size: 1.1rem;
+            }
+            
+            .hero {
+                padding: 7rem 2rem 3rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 3rem;
+            }
+            
+            .rates {
+                padding: 4rem 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .faq {
+                padding: 4rem 2rem;
+            }
+            
+            .contact {
+                padding: 4rem 2rem;
+            }
+            
+            .footer-container {
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero-content h2 {
+                font-size: 3.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
             nav ul {
                 position: fixed;
                 top: 0;
@@ -863,7 +929,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 2rem;
+                gap: 1.5rem;
                 transition: right 0.3s ease;
                 z-index: 1000;
             }
@@ -883,45 +949,23 @@
             .mobile-menu-btn.active i {
                 transform: rotate(90deg);
             }
-
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .rates-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                padding: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-content h2 {
-                font-size: 1.8rem;
-            }
-
+            
             .hero-buttons {
                 flex-direction: column;
-                gap: 1rem;
             }
-
+            
             .cta-button {
                 width: 100%;
                 text-align: center;
             }
-
-            .rate-card {
-                padding: 1.5rem;
-            }
-
+            
             .app-buttons {
                 flex-direction: column;
+            }
+            
+            .app-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -998,7 +1042,7 @@
                             <li><i class="fas fa-check-circle"></i> Anında transfer imkanı (7/24)</li>
                             <li><i class="fas fa-check-circle"></i> Şeffaf rezerv yapısı</li>
                             <li><i class="fas fa-check-circle"></i> Global likidite havuzu</li>
-							<li><i class="fas fa-check-circle"></i> Sıfır makas farkı ile anlık işlem imkanı</li>
+                            <li><i class="fas fa-check-circle"></i> Sıfır makas farkı ile anlık işlem imkanı</li>
                         </ul>
                     </div>
                     <div class="rate-card-footer">
@@ -1024,7 +1068,7 @@
                             <li><i class="fas fa-check-circle"></i> Anında transfer imkanı (7/24)</li>
                             <li><i class="fas fa-check-circle"></i> Şeffaf rezerv yapısı</li>
                             <li><i class="fas fa-check-circle"></i> Global likidite havuzu</li>
-							<li><i class="fas fa-check-circle"></i> Sıfır makas farkı ile anlık işlem imkanı</li>
+                            <li><i class="fas fa-check-circle"></i> Sıfır makas farkı ile anlık işlem imkanı</li>
                         </ul>
                     </div>
                     <div class="rate-card-footer">
@@ -1182,7 +1226,7 @@
         // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -1199,7 +1243,7 @@
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
                 }
@@ -1259,7 +1303,7 @@
             });
         });
 
-        // Buy button functionality - removed demo alert
+        // Buy button functionality
         document.querySelectorAll('.buy-button').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1267,15 +1311,13 @@
             });
         });
 
-        // Whitepaper button functionality - removed demo alert
+        // Whitepaper button functionality
         document.querySelectorAll('.whitepaper-btn').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 // No action for demo
             });
         });
-
-        // Removed live rate changes simulation
     </script>
 </body>
 </html>
