@@ -24,27 +24,22 @@
             --warning: #ffc107;
             --info: #17a2b8;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         @font-face {
             font-family: 'Poppins';
             src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         }
-
         body {
             background-color: var(--white);
             color: var(--dark);
             overflow-x: hidden;
             line-height: 1.6;
         }
-
-        /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
@@ -55,13 +50,11 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-
         header.scrolled {
             padding: 0.5rem 2rem;
             background: rgba(0, 104, 71, 0.98);
             backdrop-filter: blur(10px);
         }
-
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -69,24 +62,20 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
         }
-        
         .logo-img {
             width: 40px;
             height: 40px;
             transition: transform 0.3s ease;
         }
-
         .logo:hover .logo-img {
             transform: rotate(15deg);
         }
-
         .logo h1 {
             font-weight: 700;
             font-size: 1.8rem;
@@ -95,13 +84,11 @@
             -webkit-text-fill-color: transparent;
             transition: all 0.3s ease;
         } 
-
         nav ul {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-
         nav a {
             color: var(--white);
             text-decoration: none;
@@ -111,11 +98,9 @@
             position: relative;
             padding: 0.5rem 0;
         }
-
         nav a:hover {
             color: var(--secondary);
         }
-
         nav a::after {
             content: '';
             position: absolute;
@@ -127,11 +112,9 @@
             transition: width 0.3s ease;
             border-radius: 3px;
         }
-
         nav a:hover::after {
             width: 100%;
         }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -141,8 +124,6 @@
             cursor: pointer;
             z-index: 1001;
         }
-
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 104, 71, 0.9), rgba(0, 77, 51, 0.9)), url('https://images.unsplash.com/photo-1642784634789-b5fbd87a9d8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
@@ -156,7 +137,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -167,7 +147,6 @@
             background: linear-gradient(to top, var(--white), transparent);
             z-index: 1;
         }
-
         .hero-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -176,39 +155,33 @@
             position: relative;
             z-index: 2;
         }
-
         .hero-content {
             max-width: 600px;
             color: var(--white);
         }
-
         .hero-content h2 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-
         .hero-content h2 span {
             background: linear-gradient(to right, var(--secondary), #ffea00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 2.5rem;
             line-height: 1.6;
             opacity: 0.9;
         }
-
         .hero-buttons {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
         }
-
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -225,20 +198,17 @@
             border: 2px solid var(--secondary);
             box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
-
         .cta-button:hover {
             background-color: transparent;
             color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
         }
-
         .app-buttons {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
         }
-
         .app-btn {
             display: flex;
             align-items: center;
@@ -253,18 +223,14 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-
         .app-btn:hover {
             background-color: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
         }
-
         .app-btn i {
             margin-right: 0.5rem;
             font-size: 1.2rem;
         }
-
-        /* Floating coins animation */
         .floating-coins {
             position: absolute;
             width: 100%;
@@ -274,7 +240,6 @@
             overflow: hidden;
             z-index: 0;
         }
-
         .coin {
             position: absolute;
             width: 40px;
@@ -285,7 +250,6 @@
             opacity: 0.7;
             animation: float 15s infinite linear;
         }
-
         .coin:nth-child(1) {
             top: 10%;
             left: 10%;
@@ -294,7 +258,6 @@
             animation-delay: 0s;
             animation-duration: 12s;
         }
-
         .coin:nth-child(2) {
             top: 20%;
             left: 80%;
@@ -303,7 +266,6 @@
             animation-delay: 2s;
             animation-duration: 18s;
         }
-
         .coin:nth-child(3) {
             top: 70%;
             left: 15%;
@@ -312,7 +274,6 @@
             animation-delay: 4s;
             animation-duration: 10s;
         }
-
         .coin:nth-child(4) {
             top: 60%;
             left: 70%;
@@ -321,8 +282,6 @@
             animation-delay: 1s;
             animation-duration: 15s;
         }
-
-        /* Rates Section */
         .rates {
             padding: 5rem 2rem;
             max-width: 1400px;
@@ -330,19 +289,16 @@
             position: relative;
             background-color: var(--light-gray);
         }
-
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-
         .section-title h2 {
             font-size: 2.5rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
         }
-
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -353,20 +309,17 @@
             left: 25%;
             border-radius: 2px;
         }
-
         .section-title p {
             max-width: 700px;
             margin: 1rem auto 0;
             color: #555;
         }
-
         .rates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
             justify-content: center;
         }
-
         .rate-card {
             background-color: var(--white);
             border-radius: 15px;
@@ -381,17 +334,14 @@
             opacity: 0;
             transform: translateY(20px);
         }
-
         .rate-card.animated {
             opacity: 1;
             transform: translateY(0);
         }
-
         .rate-card:hover {
             transform: translateY(-10px) !important;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
-
         .rate-card::before {
             content: '';
             position: absolute;
@@ -402,24 +352,20 @@
             background: linear-gradient(to right, var(--primary), var(--secondary));
             z-index: 2;
         }
-
         .rate-card-header {
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
         }
-
         .rate-card-header i {
             font-size: 2rem;
             color: var(--secondary);
             margin-right: 1rem;
         }
-
         .rate-card-header h3 {
             font-size: 1.5rem;
             color: var(--primary);
         }
-
         .rate-value {
             font-size: 2.5rem;
             font-weight: 700;
@@ -427,7 +373,6 @@
             margin-bottom: 1rem;
             font-family: 'Poppins', sans-serif;
         }
-
         .rate-change {
             display: inline-flex;
             align-items: center;
@@ -438,37 +383,30 @@
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
         }
-
         .rate-change.up {
             background-color: rgba(40, 167, 69, 0.1);
             color: var(--success);
         }
-
         .rate-change.down {
             background-color: rgba(220, 53, 69, 0.1);
             color: var(--danger);
         }
-
         .rate-change.neutral {
             background-color: rgba(23, 162, 184, 0.1);
             color: var(--info);
         }
-
         .rate-details {
             margin-bottom: 1.5rem;
         }
-
         .rate-details p {
             margin-bottom: 1rem;
             color: #555;
             line-height: 1.6;
         }
-
         .rate-features {
             list-style: none;
             margin-top: 1rem;
         }
-
         .rate-features li {
             margin-bottom: 0.5rem;
             display: flex;
@@ -477,11 +415,9 @@
             color: var(--primary);
             font-weight: 500;
         }
-
         .rate-features i {
             color: var(--success);
         }
-
         .rate-card-footer {
             margin-top: auto;
             padding-top: 1.5rem;
@@ -490,7 +426,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .whitepaper-btn {
             background: transparent;
             color: var(--primary);
@@ -504,12 +439,10 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .whitepaper-btn:hover {
             background-color: var(--primary);
             color: var(--white);
         }
-
         .buy-button {
             background: linear-gradient(to right, var(--primary), var(--primary-light));
             color: var(--white);
@@ -524,33 +457,26 @@
             gap: 0.5rem;
             box-shadow: 0 4px 15px rgba(0, 104, 71, 0.2);
         }
-
         .buy-button:hover {
             background: linear-gradient(to right, var(--primary-dark), var(--primary));
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 104, 71, 0.3);
         }
-
         .buy-button i {
             font-size: 1rem;
         }
-
-        /* FAQ Section */
         .faq {
             padding: 5rem 2rem;
             background-color: var(--light-gray);
         }
-
         .faq-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-
         .accordion {
             max-width: 800px;
             margin: 2rem auto 0;
         }
-
         .accordion-item {
             margin-bottom: 1rem;
             border-radius: 8px;
@@ -558,7 +484,6 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             background-color: var(--white);
         }
-
         .accordion-header {
             padding: 1.5rem;
             background-color: var(--white);
@@ -570,19 +495,15 @@
             align-items: center;
             transition: all 0.3s ease;
         }
-
         .accordion-header:hover {
             background-color: #f9f9f9;
         }
-
         .accordion-header i {
             transition: transform 0.3s ease;
         }
-
         .accordion-item.active .accordion-header i {
             transform: rotate(180deg);
         }
-
         .accordion-content {
             padding: 0 1.5rem;
             max-height: 0;
@@ -590,19 +511,15 @@
             transition: max-height 0.3s ease, padding 0.3s ease;
             border-top: 1px solid transparent;
         }
-
         .accordion-item.active .accordion-content {
             max-height: 500px;
             padding: 1.5rem;
             border-top: 1px solid var(--medium-gray);
         }
-
-        /* Contact Section */
         .contact {
             padding: 5rem 2rem;
             background: linear-gradient(to bottom, var(--white) 0%, var(--light-gray) 100%);
         }
-
         .contact-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -610,7 +527,6 @@
             grid-template-columns: 1fr;
             gap: 3rem;
         }
-
         .contact-info {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
@@ -620,7 +536,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .contact-info::before {
             content: '';
             position: absolute;
@@ -631,14 +546,12 @@
             background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
-
         .contact-info h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 1rem;
         }
-
         .contact-info h3::after {
             content: '';
             position: absolute;
@@ -649,41 +562,33 @@
             background-color: var(--secondary);
             border-radius: 3px;
         }
-
         .contact-details {
             margin-top: 2rem;
         }
-
         .contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 1.5rem;
             gap: 1rem;
         }
-
         .contact-item i {
             color: var(--secondary);
             font-size: 1.2rem;
             margin-top: 3px;
             flex-shrink: 0;
         }
-
         .contact-item-content h4 {
             margin-bottom: 0.3rem;
         }
-
         .contact-item-content p {
             opacity: 0.9;
         }
-
-        /* Footer */
         footer {
             background-color: var(--darker);
             color: var(--white);
             padding: 3rem 2rem 1rem;
             position: relative;
         }
-
         .footer-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -691,12 +596,10 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-
         .footer-col {
             position: relative;
             z-index: 1;
         }
-
         .footer-col h3 {
             color: var(--secondary);
             margin-bottom: 1.5rem;
@@ -704,7 +607,6 @@
             position: relative;
             padding-bottom: 0.5rem;
         }
-
         .footer-col h3::after {
             content: '';
             position: absolute;
@@ -714,38 +616,31 @@
             height: 2px;
             background-color: var(--secondary);
         }
-
         .footer-col p {
             margin-bottom: 1rem;
             opacity: 0.8;
         }
-
         .footer-col ul {
             list-style: none;
         }
-
         .footer-col ul li {
             margin-bottom: 0.8rem;
         }
-
         .footer-col ul li a {
             color: #ccc;
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
         }
-
         .footer-col ul li a:hover {
             color: var(--secondary);
             transform: translateX(5px);
         }
-
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
         }
-
         .social-links a {
             display: flex;
             align-items: center;
@@ -757,13 +652,11 @@
             color: var(--white);
             transition: all 0.3s ease;
         }
-
         .social-links a:hover {
             background-color: var(--secondary);
             color: var(--primary);
             transform: translateY(-3px);
         }
-
         .copyright {
             text-align: center;
             margin-top: 3rem;
@@ -772,7 +665,6 @@
             color: #aaa;
             font-size: 0.9rem;
         }
-
         .footer-bg {
             position: absolute;
             bottom: 0;
@@ -781,8 +673,6 @@
             opacity: 0.05;
             z-index: 0;
         }
-
-        /* Back to Top Button */
         .back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -803,18 +693,14 @@
             z-index: 999;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
         }
-
         .back-to-top:hover {
             background-color: var(--primary-dark);
             transform: translateY(-3px);
         }
-
-        /* Animations */
         @keyframes float {
             0%, 100% {
                 transform: translateY(0);
@@ -823,7 +709,6 @@
                 transform: translateY(-20px);
             }
         }
-
         @keyframes fadeInRight {
             from {
                 opacity: 0;
@@ -834,32 +719,25 @@
                 transform: translateX(0);
             }
         }
-
         .floating {
             animation: float 3s ease-in-out infinite;
         }
-
-        /* Responsive Styles */
         @media (max-width: 1200px) {
             .hero-content h2 {
                 font-size: 3rem;
             }
         }
-
         @media (max-width: 992px) {
             .hero-content h2 {
                 font-size: 2.5rem;
             }
-            
             .hero-content p {
                 font-size: 1.1rem;
             }
-            
             .section-title h2 {
                 font-size: 2.2rem;
             }
         }
-
         @media (max-width: 768px) {
             nav ul {
                 position: fixed;
@@ -876,100 +754,77 @@
                 transition: right 0.3s ease;
                 z-index: 1000;
             }
-
             nav ul.active {
                 right: 0;
             }
-
             .mobile-menu-btn {
                 display: block;
             }
-
             .mobile-menu-btn i {
                 transition: transform 0.3s ease;
             }
-
             .mobile-menu-btn.active i {
                 transform: rotate(90deg);
             }
-
             .hero-content h2 {
                 font-size: 2rem;
             }
-
             .section-title h2 {
                 font-size: 2rem;
             }
-
             .rates-grid {
                 grid-template-columns: 1fr;
             }
-
             .contact-info {
                 padding: 2rem;
             }
-            
             .hero-buttons {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
             .app-buttons {
                 flex-direction: column;
             }
-            
             .rate-card {
                 padding: 1.5rem;
             }
-            
             .rate-card-header h3 {
                 font-size: 1.3rem;
             }
-            
             .rate-value {
                 font-size: 2rem;
             }
-            
             .contact-info h3 {
                 font-size: 1.5rem;
             }
-            
             .contact-item-content h4 {
                 font-size: 1rem;
             }
-            
             .contact-item-content p {
                 font-size: 0.9rem;
             }
         }
-
         @media (max-width: 576px) {
             .header-container {
                 padding: 0.5rem 1rem;
             }
-            
             .logo h1 {
                 font-size: 1.5rem;
             }
-            
             .hero {
                 min-height: 600px;
                 padding-top: 70px;
             }
-            
             .hero-container {
                 padding: 1.5rem;
             }
-            
             .hero-content h2 {
                 font-size: 1.8rem;
             }
-            
             .hero-content p {
                 font-size: 1rem;
                 margin-bottom: 2rem;
             }
-            
             .cta-button {
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
@@ -977,112 +832,87 @@
                 text-align: center;
                 justify-content: center;
             }
-            
             .app-btn {
                 padding: 0.7rem 1.2rem;
                 font-size: 0.9rem;
                 width: 100%;
                 justify-content: center;
             }
-            
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
             .section-title p {
                 font-size: 0.9rem;
             }
-            
             .rates, .faq, .contact {
                 padding: 3rem 1rem;
             }
-            
             .rate-card {
                 padding: 1.2rem;
             }
-            
             .rate-card-header i {
                 font-size: 1.5rem;
             }
-            
             .rate-card-header h3 {
                 font-size: 1.2rem;
             }
-            
             .rate-value {
                 font-size: 1.8rem;
             }
-            
             .rate-details p {
                 font-size: 0.9rem;
             }
-            
             .rate-features li {
                 font-size: 0.9rem;
             }
-            
             .whitepaper-btn, .buy-button {
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
             }
-            
             .accordion-header {
                 padding: 1rem;
                 font-size: 0.9rem;
             }
-            
             .accordion-content {
                 padding: 0 1rem;
                 font-size: 0.9rem;
             }
-            
             .accordion-item.active .accordion-content {
                 padding: 1rem;
             }
-            
             .contact-info {
                 padding: 1.5rem;
             }
-            
             .contact-info h3 {
                 font-size: 1.3rem;
             }
-            
             .contact-item i {
                 font-size: 1rem;
             }
-            
             .contact-item-content h4 {
                 font-size: 0.9rem;
             }
-            
             .contact-item-content p {
                 font-size: 0.85rem;
             }
-            
             .footer-container {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            
             .footer-col h3 {
                 font-size: 1.1rem;
             }
-            
             .footer-col p, .footer-col ul li a {
                 font-size: 0.9rem;
             }
-            
             .social-links a {
                 width: 35px;
                 height: 35px;
                 font-size: 1rem;
             }
-            
             .copyright {
                 font-size: 0.8rem;
             }
-            
             .back-to-top {
                 width: 45px;
                 height: 45px;
@@ -1091,20 +921,16 @@
                 right: 1rem;
             }
         }
-        
         @media (max-width: 400px) {
             .rates-grid {
                 grid-template-columns: 1fr;
             }
-            
             .hero-content h2 {
                 font-size: 1.6rem;
             }
-            
             .hero-content p {
                 font-size: 0.95rem;
             }
-            
             .section-title h2 {
                 font-size: 1.6rem;
             }
@@ -1112,7 +938,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header id="header">
         <div class="header-container">
             <a href="#home" class="logo">
@@ -1132,8 +957,6 @@
             </button>
         </div>
     </header>
-
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="floating-coins">
             <div class="coin"></div>
@@ -1159,15 +982,12 @@
             </div>
         </div>
     </section>
-
-    <!-- Rates Section -->
     <section class="rates" id="rates">
         <div class="rates-container">
             <div class="section-title">
                 <h2>Stabil Kripto Paralar</h2>
                 <p>7/24 Açık Piyasa, Anında İşlem – Makas Yok, Kazanç Tam!</p>
             </div>
-            
             <div class="rates-grid">
                 <div class="rate-card">
                     <div class="rate-card-header">
@@ -1224,8 +1044,6 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQ Section -->
     <section class="faq" id="faq">
         <div class="faq-container">
             <div class="section-title">
@@ -1272,8 +1090,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-info">
@@ -1312,8 +1128,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -1340,31 +1154,22 @@
             <p>&copy; 2025 Döviz Büroları. Tüm hakları saklıdır.</p>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
-
     <script>
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
-
         mobileMenuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
         });
-
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
             });
         });
-
-        // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 100) {
@@ -1373,15 +1178,11 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
@@ -1390,10 +1191,7 @@
                 }
             });
         });
-
-        // Back to top button
         const backToTopBtn = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('visible');
@@ -1401,66 +1199,45 @@
                 backToTopBtn.classList.remove('visible');
             }
         });
-        
         backToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-
-        // Animate elements on scroll
         const animateOnScroll = function() {
             const elements = document.querySelectorAll('.rate-card, .accordion-item');
-            
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                
                 if (elementPosition < windowHeight - 100) {
                     element.classList.add('animated');
                 }
             });
         };
-
-        // Run animation check on load and scroll
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
-
-        // FAQ Accordion
         const accordionItems = document.querySelectorAll('.accordion-item');
-        
         accordionItems.forEach(item => {
             const header = item.querySelector('.accordion-header');
-            
             header.addEventListener('click', () => {
                 const currentlyActive = document.querySelector('.accordion-item.active');
-                
                 if (currentlyActive && currentlyActive !== item) {
                     currentlyActive.classList.remove('active');
                 }
-                
                 item.classList.toggle('active');
             });
         });
-
-        // Buy button functionality - removed demo alert
         document.querySelectorAll('.buy-button').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
-                // No action for demo
             });
         });
-
-        // Whitepaper button functionality - removed demo alert
         document.querySelectorAll('.whitepaper-btn').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
-                // No action for demo
             });
         });
-
-        // Removed live rate changes simulation
     </script>
 </body>
 </html>
