@@ -395,6 +395,25 @@
             background-color: rgba(23, 162, 184, 0.1);
             color: var(--info);
         }
+        .supply-info {
+            background-color: rgba(0, 104, 71, 0.05);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--primary);
+        }
+        .supply-info p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .supply-info p:last-child {
+            margin-bottom: 0;
+        }
+        .supply-info strong {
+            color: var(--primary);
+        }
         .rate-details {
             margin-bottom: 1.5rem;
         }
@@ -994,8 +1013,13 @@
                         <i class="fas fa-dollar-sign"></i>
                         <h3>MREDAS USD/TRY</h3>
                     </div>
-                    <div class="rate-value"></div>
-                    <span class="rate-change up"><i class="fas fa-arrow-up"></i> %</span>
+                    <div class="rate-value">$</div>
+                    <span class="rate-change up"><i class="fas fa-arrow-up"></i>%</span>
+                    <div class="supply-info">
+                        <p><strong>Dolaşımdaki Arz:</strong>MREDAS USD</p>
+                        <p><strong>Toplam Rezerv:</strong>$</p>
+                        <p><strong>24s Hacim:</strong>$</p>
+                    </div>
                     <div class="rate-details">
                         <p>MREDAS USD, ABD dolarına tam olarak sabitlenmiş bir stabil kripto paradır. Her bir MREDAS USD tokenı, 1:1 oranında ABD doları ile desteklenmektedir ve tam rezerv modeliyle çalışmaktadır. Düşük volatilitesi sayesinde güvenli bir değer saklama aracı olarak kullanılabilir.</p>
                         <ul class="rate-features">
@@ -1020,8 +1044,13 @@
                         <i class="fas fa-gem"></i>
                         <h3>MREDAS Gold/TRY</h3>
                     </div>
-                    <div class="rate-value"></div>
-                    <span class="rate-change up"><i class="fas fa-arrow-up"></i> %</span>
+                    <div class="rate-value">$</div>
+                    <span class="rate-change up"><i class="fas fa-arrow-up"></i>%</span>
+                    <div class="supply-info">
+                        <p><strong>Dolaşımdaki Arz:</strong>MREDAS Gold</p>
+                        <p><strong>Toplam Rezerv:</strong>Ons Altın</p>
+                        <p><strong>24s Hacim:</strong>$</p>
+                    </div>
                     <div class="rate-details">
                         <p>MREDAS Gold, fiziksel altına tam olarak sabitlenmiş bir stabil kripto paradır. Her bir MREDAS Gold tokenı, 1 Ons altın ile desteklenmektedir ve Londra Altın Piyasası standartlarına uygundur. Güvenli depolama tesislerinde saklanan altınlar düzenli olarak denetlenir.</p>
                         <ul class="rate-features">
